@@ -10,8 +10,10 @@ export class ProductAPI {
     }
 
     async getAllProducts() {
-        const response = await this.request.get(this.basePath);
-        return response;
+        
+        return await this.request.get(this.basePath);
+        //const response = await this.request.get(this.basePath);
+        //return response;
     }
 
      async createProduct(datosProducto: object) {

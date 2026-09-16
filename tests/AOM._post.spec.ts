@@ -10,6 +10,7 @@ const data = {
 //"image": "http://example.com"
 } 
 
+test.describe('Product API Tests', () => {
 test('Create Product', async ({ request }) => {
     const productAPI = new ProductAPI(request);
 const response = await productAPI.createProduct(data);
@@ -20,4 +21,5 @@ const response = await productAPI.createProduct(data);
   console.log(await response.json());
 
 
+});
 });
