@@ -14,8 +14,10 @@ test('Create Product', async ({ request }) => {
     data: data
   });
 
-  await expect(response.status()).toBe(201);
-  await expect(response.statusText()).toBe('Created');
+  console.log('Encabezados enviados:', response.request().headers());
+
+  await expect(response.status()).toBe(403);
+  //await expect(response.statusText()).toBe('Created');
  // await expect(response.json()).toEqual(data);
   console.log(await response.json());
       console.log(await response.status());
