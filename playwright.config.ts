@@ -28,13 +28,11 @@ export default defineConfig({
    // All requests we send go to this API endpoint.
     baseURL: 'https://fakestoreapi.com/',
     extraHTTPHeaders: {
-     //'Accept': '*/*',
-      //'Accept-Language': 'en-US,en;q=0.9,es-US;q=0.8,es-ES;q=0.7,es;q=0.6',
+     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
-      
-      // Estos dos ayudan a simular que la petición viene de un navegador real
-      'Origin': 'https://jsonplaceholder.typicode.com',
-      'Referer': 'https://jsonplaceholder.typicode.com/',
+      'Origin': 'https://fakestoreapi.com',
+      'Referer': 'https://fakestoreapi.com/'
     },
     trace: 'on-first-retry',
   },
