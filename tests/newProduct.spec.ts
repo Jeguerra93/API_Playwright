@@ -14,7 +14,7 @@ test('Create Product', async ({ request }) => {
     data: data
   });
 
-  console.log('Encabezados enviados:', response.request().headers());
+  //console.log('Encabezados enviados:', response.request().headers());
 
   await expect(response.status()).toBe(403);
   //await expect(response.statusText()).toBe('Created');
