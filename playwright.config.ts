@@ -1,4 +1,18 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+const enviroment = process.env.TEST_ENV || 'qa';
+
+
+dotenv.config({ path: path.resolve(__dirname, `.env.${enviroment}`) });
+
+console.log(`Using environment: ${enviroment}`);
 
 /**
  * Read environment variables from file.
@@ -26,13 +40,13 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
    // All requests we send go to this API endpoint.
-    baseURL: 'https://fakestoreapi.com/',
+    baseURL: process.env.BASE_URL,
     extraHTTPHeaders: {
      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Origin': 'https://fakestoreapi.com',
-      'Referer': 'https://fakestoreapi.com/'
+      'Origin': process.env.BASE_URL,
+      'Referer': process.env.BASE_URL
     },
     trace: 'on-first-retry',
   },
