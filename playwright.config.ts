@@ -33,8 +33,8 @@ export default defineConfig({
       'Content-Type': 'application/json',
       
       // Estos dos ayudan a simular que la petición viene de un navegador real
-      //'Origin': 'https://jsonplaceholder.typicode.com',
-      //'Referer': 'https://jsonplaceholder.typicode.com/',
+      'Origin': 'https://jsonplaceholder.typicode.com',
+      'Referer': 'https://jsonplaceholder.typicode.com/',
     },
     trace: 'on-first-retry',
   },
