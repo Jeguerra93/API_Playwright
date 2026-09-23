@@ -18,6 +18,8 @@ test('Create Product', async ({ request }) => {
   await expect(response.statusText()).toBe('Created');
  // await expect(response.json()).toEqual(data);
   console.log(await response.json());
+      console.log(await response.status());
+
 
 
 });
